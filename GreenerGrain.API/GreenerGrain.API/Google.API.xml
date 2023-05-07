@@ -4,6 +4,11 @@
         <name>GreenerGrain.API</name>
     </assembly>
     <members>
+        <member name="M:GreenerGrain.API.Controllers.HealthController.#ctor(API.Framework.Interfaces.IApiContext)">
+            <summary>
+            Construtor
+            </summary>
+        </member>
         <member name="T:GreenerGrain.API.Program">
             <summary>
             Program class

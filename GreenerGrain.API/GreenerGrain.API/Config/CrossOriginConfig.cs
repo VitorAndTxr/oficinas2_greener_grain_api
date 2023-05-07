@@ -17,7 +17,7 @@ namespace GreenerGrain.API.Config
                 throw new ArgumentNullException(nameof(services));
             }
 
-            var allowOrigins = JsonConvert.DeserializeObject<string[]>(configuration.GetValue<string>("VirtualScheduleService:Cors:AllowOrigins"));
+            var allowOrigins = JsonConvert.DeserializeObject<string[]>(configuration.GetValue<string>("GreenerGrainService:Cors:AllowOrigins"));
                         
             services.AddCors(options =>
             {
