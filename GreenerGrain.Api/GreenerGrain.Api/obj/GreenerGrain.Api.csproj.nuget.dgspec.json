@@ -1,23 +1,375 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\Brainz\\Agendamento\\StudentCoordinatorWorkerService\\GreenerGrain.Api\\GreenerGrain.Api\\GreenerGrain.Api.csproj": {}
+    "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.API\\GreenerGrain.API.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\Brainz\\Agendamento\\StudentCoordinatorWorkerService\\GreenerGrain.Api\\GreenerGrain.Api\\GreenerGrain.Api.csproj": {
+    "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.API\\GreenerGrain.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\Brainz\\Agendamento\\StudentCoordinatorWorkerService\\GreenerGrain.Api\\GreenerGrain.Api\\GreenerGrain.Api.csproj",
-        "projectName": "GreenerGrain.Api",
-        "projectPath": "C:\\Repos\\Brainz\\Agendamento\\StudentCoordinatorWorkerService\\GreenerGrain.Api\\GreenerGrain.Api\\GreenerGrain.Api.csproj",
+        "projectUniqueName": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.API\\GreenerGrain.API.csproj",
+        "projectName": "GreenerGrain.API",
+        "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.API\\GreenerGrain.API.csproj",
         "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\Brainz\\Agendamento\\StudentCoordinatorWorkerService\\GreenerGrain.Api\\GreenerGrain.Api\\obj\\",
+        "outputPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
+          "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\NuGet.Config",
+          "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repositoriobb.pkgs.visualstudio.com/_packaging/bigbrain-feed/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.CrossCutting\\GreenerGrain.CrossCutting.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.CrossCutting\\GreenerGrain.CrossCutting.csproj"
+              },
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj"
+              },
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj"
+              },
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Service\\GreenerGrain.Service.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Service\\GreenerGrain.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "EFCore.NamingConventions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.CrossCutting\\GreenerGrain.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.CrossCutting\\GreenerGrain.CrossCutting.csproj",
+        "projectName": "GreenerGrain.CrossCutting",
+        "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.CrossCutting\\GreenerGrain.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\NuGet.Config",
+          "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repositoriobb.pkgs.visualstudio.com/_packaging/bigbrain-feed/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Service\\GreenerGrain.Service.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Service\\GreenerGrain.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Data\\GreenerGrain.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Data\\GreenerGrain.Data.csproj",
+        "projectName": "GreenerGrain.Data",
+        "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Data\\GreenerGrain.Data.csproj",
+        "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\NuGet.Config",
+          "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repositoriobb.pkgs.visualstudio.com/_packaging/bigbrain-feed/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj"
+              },
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj",
+        "projectName": "GreenerGrain.Domain",
+        "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj",
+        "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\NuGet.Config",
+          "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repositoriobb.pkgs.visualstudio.com/_packaging/bigbrain-feed/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj",
+        "projectName": "GreenerGrain.Framework",
+        "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj",
+        "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\NuGet.Config",
           "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
@@ -48,9 +400,75 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.ApplicationInsights": {
+              "target": "Package",
+              "version": "[2.16.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.AspNetCore.Rewrite": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.Extensions.Caching.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.PlatformAbstractions": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Portable.BouncyCastle": {
+              "target": "Package",
+              "version": "[1.8.9, )"
+            },
+            "ServiceStack.Text": {
+              "target": "Package",
+              "version": "[5.10.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[5.6.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            },
+            "jose-jwt": {
+              "target": "Package",
+              "version": "[3.0.0, )"
             }
           },
           "imports": [
@@ -65,9 +483,163 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Provider\\GreenerGrain.Provider.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Provider\\GreenerGrain.Provider.csproj",
+        "projectName": "GreenerGrain.Provider",
+        "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Provider\\GreenerGrain.Provider.csproj",
+        "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Provider\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\NuGet.Config",
+          "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repositoriobb.pkgs.visualstudio.com/_packaging/bigbrain-feed/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Google.Apis.Calendar.v3": {
+              "target": "Package",
+              "version": "[1.57.0.2759, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Service\\GreenerGrain.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Service\\GreenerGrain.Service.csproj",
+        "projectName": "GreenerGrain.Service",
+        "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Service\\GreenerGrain.Service.csproj",
+        "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\NuGet.Config",
+          "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://repositoriobb.pkgs.visualstudio.com/_packaging/bigbrain-feed/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Data\\GreenerGrain.Data.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Data\\GreenerGrain.Data.csproj"
+              },
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Domain\\GreenerGrain.Domain.csproj"
+              },
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Framework\\GreenerGrain.Framework.csproj"
+              },
+              "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Provider\\GreenerGrain.Provider.csproj": {
+                "projectPath": "C:\\Repos\\Faculdade\\Oficinas 2\\oficinas2_greener_grain_api\\GreenerGrain.API\\GreenerGrain.Provider\\GreenerGrain.Provider.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

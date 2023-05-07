@@ -1,25 +1,50 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using System;
+using System.Net;
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+namespace GreenerGrain.API
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    /// <summary>
+    /// Program class
+    /// </summary>
+    public class Program
+    {
+        /// <summary>
+        /// Application Main()
+        /// </summary>
+        /// <param name="args">The arguments</param>
+        public static void Main(string[] args)
+        {
+            CreateWebHostBuilder(args).Build().Run();
+        }
+
+        /// <summary>
+        /// CreateWebHostBuilder
+        /// </summary>
+        /// <param name="args">The arguments</param>
+        /// <returns>The WebHostBuilder</returns>
+        public static IHostBuilder CreateWebHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder
+                        .UseStartup<Startup>()
+                        //.ConfigureKestrel(options =>
+                        //{
+                        //    var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+                        //    var isDevelopment = string.Equals(env, "development", StringComparison.InvariantCultureIgnoreCase);
+                        //    if (isDevelopment == false)
+                        //    {
+                        //        var port = Convert.ToInt32(Environment.GetEnvironmentVariable("PORT") ?? "80");
+                        //        options.Listen(IPAddress.Any, port);
+                        //    }
+                        //})
+                        .ConfigureAppConfiguration((hostingContext, config) =>
+                        {
+                            var settings = config.Build();
+                        });
+                });
+
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
