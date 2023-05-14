@@ -66,7 +66,6 @@ namespace GreenerGrain.API
 
             app.UseCorsConfig();
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
