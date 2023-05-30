@@ -12,7 +12,6 @@
     <ProjectReference Include="..\GreenerGrain.Data\GreenerGrain.Data.csproj" />
     <ProjectReference Include="..\GreenerGrain.Domain\GreenerGrain.Domain.csproj" />
     <ProjectReference Include="..\GreenerGrain.Framework\GreenerGrain.Framework.csproj" />
-    <ProjectReference Include="..\GreenerGrain.Provider\GreenerGrain.Provider.csproj" />
   </ItemGroup>
 
 </Project>

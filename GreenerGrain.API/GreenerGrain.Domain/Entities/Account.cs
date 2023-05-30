@@ -16,12 +16,9 @@ namespace GreenerGrain.Domain.Entities
 
         public string Login { get; private set; }
         public string Name { get; private set; }
-        
-        public Guid InstitutionId { get; private set; }
-        public Guid ProviderId { get; private set; }
+        public string Password { get; private set; }
 
-        public virtual Institution Institution { get; set; }
-        public virtual Provider Provider { get; set; }
+
 
     }
 }

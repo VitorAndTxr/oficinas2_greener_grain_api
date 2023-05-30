@@ -20,17 +20,10 @@ namespace GreenerGrain.Data.Repositories
         public async Task<Account> GetByLogin(string login)
         {
             var result = await GetAsync(x => x.Login == login, 
-                includeProperties: "Institution,Provider");
+                includeProperties: "");
 
             return result.FirstOrDefault();
         }
-
-        public async Task<Account> GetByLoginProvider(string login, Guid providerId)
-        {
-            var result = await GetAsync(x => x.Login == login && x.ProviderId == providerId, 
-                includeProperties: "Institution,Provider");
-
-            return result.FirstOrDefault();            
-        }        
+    
     }
 }

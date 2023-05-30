@@ -23,28 +23,18 @@ namespace GreenerGrain.Data.Mapping
                  .IsRequired();
 
             builder
-                 .Property(b => b.InstitutionId)
-                 .IsRequired();
-
-            builder
-                 .Property(b => b.ProviderId)
-                 .IsRequired();
-
-            builder
                 .Property(b => b.CreationDate)
-                .HasColumnType("timestamp")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             builder
                 .Property(b => b.UpdateDate)
-                .HasColumnType("timestamp");
+                .HasColumnType("datetime2");
 
             builder
                 .Property(b => b.DeleteDate)
-                .HasColumnType("timestamp");
+                .HasColumnType("datetime2");
 
-            builder.HasOne(x => x.Institution);
-            builder.HasOne(x => x.Provider);
         }
     }
 }

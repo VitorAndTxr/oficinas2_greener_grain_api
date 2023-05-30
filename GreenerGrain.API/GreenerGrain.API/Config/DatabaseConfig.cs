@@ -15,13 +15,11 @@ namespace GreenerGrain.API.Config
                 throw new ArgumentNullException(nameof(services));
             }
 
-            var databaseConnectionString = configuration.GetValue<string>("DB:ConnectionString:VirtualScheduleService");            
+            var databaseConnectionString = configuration.GetValue<string>("DB:ConnectionString:Service");            
 
             services.AddDbContext<DatabaseContext>(options =>
             {
-                options
-                    .UseNpgsql(databaseConnectionString)                    
-                    .UseSnakeCaseNamingConvention();
+                options.UseSqlServer(databaseConnectionString);
             });
         }
 

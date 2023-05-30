@@ -2,6 +2,7 @@
 using GreenerGrain.Domain.ViewModels;
 using GreenerGrain.Framework.Controllers;
 using GreenerGrain.Framework.Result;
+using GreenerGrain.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GreenerGrain.API.Controllers
@@ -17,33 +18,48 @@ namespace GreenerGrain.API.Controllers
         /// </summary>
         /// 
 
+        private readonly IAccountService _accountService;
+
+
         #endregion
 
         #region Construtor
         /// <summary>
         /// Construtor
         /// </summary>
-        public HealthController(IApiContext apiContext) : base(apiContext)
+        public HealthController(IApiContext apiContext, IAccountService accountService) : base(apiContext)
         {
+            _accountService = accountService;
         }
 
         #endregion
 
         [HttpGet]
-        [ProducesDefaultResponseType(typeof(ApiResponse<AuthorizationViewModel>))]
+        [ProducesDefaultResponseType(typeof(ApiResponse<string>))]
 
-        public IActionResult Get()
+        public IActionResult Get([FromBody]string password)
         {
             var response = this.ServiceInvoke(
-                () =>
+            () =>
+            {
+                return (
+                new HealthResponseViewModel()
                 {
-                    return (
-                    new HealthResponseViewModel()
-                    {
-                        message = "Oi",
-                        code = 1
-                    });
+                    message = "Oi",
+                    code = 1
                 });
+            });
+            return response;
+        }
+
+        [HttpPost]
+        [Route("Encrypt")]
+        [ProducesDefaultResponseType(typeof(ApiResponse<AuthorizationViewModel>))]
+
+        public IActionResult Encrypt([FromBody] string password)
+        {
+
+            var response = this.ServiceInvoke(_accountService.Encrypt, password);
             return response;
         }
     }

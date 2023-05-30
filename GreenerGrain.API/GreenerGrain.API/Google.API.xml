@@ -4,7 +4,13 @@
         <name>GreenerGrain.API</name>
     </assembly>
     <members>
-        <member name="M:GreenerGrain.API.Controllers.HealthController.#ctor(API.Framework.Interfaces.IApiContext)">
+        <member name="F:GreenerGrain.API.Controllers.HealthController._accountService">
+            <summary>
+            Referencia interna ao serviço 
+            </summary>
+            
+        </member>
+        <member name="M:GreenerGrain.API.Controllers.HealthController.#ctor(API.Framework.Interfaces.IApiContext,GreenerGrain.Service.Interfaces.IAccountService)">
             <summary>
             Construtor
             </summary>

@@ -25,16 +25,16 @@ namespace GreenerGrain.Data.Mapping
 
             builder
                 .Property(b => b.CreationDate)
-                .HasColumnType("timestamp")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
             builder
                 .Property(b => b.UpdateDate)
-                .HasColumnType("timestamp");
+                .HasColumnType("datetime2");
 
             builder
                 .Property(b => b.DeleteDate)
-                .HasColumnType("timestamp");
+                .HasColumnType("datetime2");
 
         }
     }

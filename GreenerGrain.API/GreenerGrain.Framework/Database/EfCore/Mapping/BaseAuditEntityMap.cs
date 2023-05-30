@@ -14,17 +14,17 @@ namespace GreenerGrain.Framework.Database.EfCore.Mapping
 
             builder
                 .Property(b => b.CreationDate)
-                .HasColumnType("DateTime")
+                .HasColumnType("datetime2")
                 .HasDefaultValueSql("GETDATE()")
                 .IsRequired();
 
             builder
                 .Property(b => b.UpdateDate)
-                .HasColumnType("DateTime");
+                .HasColumnType("datetime2");
 
             builder
                 .Property(b => b.DeleteDate)
-                .HasColumnType("DateTime");
+                .HasColumnType("datetime2");
 
             CreateModel(builder);
         }

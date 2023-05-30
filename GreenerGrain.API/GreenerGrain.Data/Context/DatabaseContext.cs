@@ -22,36 +22,14 @@ namespace GreenerGrain.Data.Context
         {
             return this;
         }
-
-        public DbSet<ServiceDeskType> ServiceDeskType { get; set; }
-        public DbSet<ServiceDesk> ServiceDesk { get; set; }
-        public DbSet<ServiceDeskOpeningHours> ServiceDeskOpeningHours { get; set; }
-
-        public DbSet<ServiceDeskOfficer> ServiceDeskOfficer { get; set; }
-        public DbSet<OfficerPause> OfficerPause { get; set; }
-        public DbSet<OfficerHour> OfficerHour { get; set; }
-        public DbSet<InstitutionServiceLocation> InstitutionServiceLocation { get; set; }
-        public DbSet<Appointment> Appointment { get; set; }
-        public DbSet<AppointmentQueue> AppointmentQueue { get; set; }
-        public DbSet<Provider> Provider { get; set; }
-        public DbSet<Property> Property { get; set; }
-        public DbSet<InstitutionProvider> InstitutionProvider { get; set; }
-        public DbSet<InstitutionProviderProperty> InstitutionProviderProperty { get; set; }
         
-        public DbSet<GreenerGrain.Domain.Entities.Account> Account { get; set; }
+        public DbSet<Account> Account { get; set; }
         public DbSet<AccountProfile> AccountProfile { get; set; }
-        public DbSet<Institution> Institution { get; set; }
-        public DbSet<GreenerGrain.Domain.Entities.Profile> Profile { get; set; }
+        public DbSet<Profile> Profile { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder
-               .Entity<InstitutionProviderSettings>(eb =>
-               {
-                   eb.HasNoKey();
-                   eb.ToView("institution_provider_settings");
-               });
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 

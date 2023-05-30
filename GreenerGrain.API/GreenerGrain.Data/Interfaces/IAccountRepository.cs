@@ -7,7 +7,6 @@ namespace GreenerGrain.Data.Interfaces
 {
     public interface IAccountRepository : IRepositoryBase<Account>
     {
-        Task<Account> GetByLogin(string login);
-        Task<Account> GetByLoginProvider(string login, Guid providerId);        
+        Task<Account> GetByLogin(string login);     
     }
 }

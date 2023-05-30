@@ -10,6 +10,7 @@ namespace GreenerGrain.Service.Interfaces
         AuthorizationViewModel Authorization(AuthorizationPayload payload);
 
         AuthorizationViewModel RefreshToken();
+        string Encrypt(string toEncrypt);
 
     }
 }

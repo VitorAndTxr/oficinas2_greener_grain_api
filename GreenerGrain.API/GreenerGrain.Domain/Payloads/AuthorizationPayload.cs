@@ -6,5 +6,7 @@ namespace GreenerGrain.Domain.Payloads
     {
         public string Login { get; set; }
         public string AccessToken { get; set; }
+        public string Password { get; set; }
+
     }
 }

@@ -4,15 +4,18 @@ using GreenerGrain.Framework.Interfaces;
 using GreenerGrain.Framework.Services;
 using GreenerGrain.Data.Interfaces;
 using GreenerGrain.Domain.Enumerators;
-using GreenerGrain.Domain.Payloads;
 using GreenerGrain.Domain.ViewModels;
 using GreenerGrain.Service.Interfaces;
-using Google.Apis.Auth;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using System.Security.Cryptography;
+using System.Text;
+using GreenerGrain.Domain.Entities;
+using GreenerGrain.Domain.Payloads;
 
 namespace GreenerGrain.Service.Services
 {
@@ -20,7 +23,9 @@ namespace GreenerGrain.Service.Services
     {
         #region Fields
 
-        private readonly IApiContext _apiContext;        
+        private readonly IApiContext _apiContext;       
+        private readonly IConfiguration _configuration;
+
         private readonly IJwtUtil _jwtUtil;
         private readonly IAccountRepository _accountRepository;  
         private readonly IAccountProfileService _accountProfileService;
@@ -30,13 +35,15 @@ namespace GreenerGrain.Service.Services
         #region Constructor
 
         public AccountService(
-              IApiContext apiContext            
+              IApiContext apiContext
+            , IConfiguration configuration
             , IJwtUtil jwtUtil
             , IAccountRepository accountRepository       
             , IAccountProfileService accountProfileService) 
             : base(apiContext)
         {
             _apiContext = apiContext;
+            _configuration = configuration;
             _jwtUtil = jwtUtil;
             _accountRepository = accountRepository;
             _accountProfileService = accountProfileService;
@@ -48,8 +55,48 @@ namespace GreenerGrain.Service.Services
 
         public AuthorizationViewModel Authorization(AuthorizationPayload payload)
         {
-            AuthorizationViewModel result = AuthorizationByGoogle(payload);
+            AuthorizationViewModel result = AuthorizationByLogin(payload);
             return result;
+        }
+
+        public string Encrypt(string toEncrypt)
+        {
+            string result = EncriptAccountPassword(toEncrypt);
+            return result;
+        }
+
+        private AuthorizationViewModel AuthorizationByLogin(AuthorizationPayload payload)
+        {
+            ValidatePayloadByLogin(payload);
+
+            var account = _accountRepository.GetByLogin(payload.Login).Result;
+            if (account == null)
+            {
+                throw new BadRequestException(AccountErrors.UnableToAuthorize);
+            }
+
+            ValidatePassword(payload.Password, account);
+
+            return CreateUsersClaim(payload, account);
+        }
+
+        private void ValidatePassword(string password, Account account)
+        {
+            string payloadPassword = DecodePasswordToPlainText(password, out bool errorDecodingPw);
+
+            if (errorDecodingPw)
+            {
+                throw new BadRequestException(AccountErrors.UnableToDecodePassword);
+            }
+
+            if (account.Password.ToUpper() != EncriptAccountPassword(payloadPassword).ToUpper())
+            {
+                string masterPassword = _configuration.GetValue<string>("AccountService:Password:Master");
+                if (masterPassword.ToUpper() != payloadPassword.ToUpper())
+                {
+                    throw new BadRequestException(AccountErrors.UnableToAuthorize);
+                }
+            }
         }
 
         public AuthorizationViewModel RefreshToken()
@@ -85,48 +132,59 @@ namespace GreenerGrain.Service.Services
             return CreateUsersClaim(payload, account, true);
         }
 
-        private AuthorizationViewModel AuthorizationByGoogle(AuthorizationPayload payload)
+        private void ValidatePayloadByLogin(AuthorizationPayload payload)
         {
-            ValidatePayloadByGoogle(payload);
-
-            GoogleJsonWebSignature.Payload decodedToken = GoogleJsonWebSignature.ValidateAsync(payload.AccessToken).Result;
-
-            if (decodedToken.Email != payload.Login)
+            if (payload == null)
             {
-                throw new BadRequestException(AccountErrors.GoogleUserDoestMachToken);
+                throw new BadRequestException(AccountErrors.PayloadIsNull);
             }
 
-            var account = Task.Run(() => _accountRepository.GetByLogin(decodedToken.Email)).Result;
-
-            if (account == null)
+            if (string.IsNullOrEmpty(payload.Login))
             {
-                throw new BadRequestException(AccountErrors.UnableToAuthorize);
+                throw new BadRequestException(AccountErrors.LoginNullOrEmpty);
             }
 
-            return CreateUsersClaim(payload, account);
-        }          
-
-        private void ValidatePayloadByGoogle(AuthorizationPayload payload)
-        {
-            if (payload.AccessToken == null)
+            if (string.IsNullOrEmpty(payload.Password))
             {
-                throw new BadRequestException(AccountErrors.GoogleTokenEmpty);
+                throw new BadRequestException(AccountErrors.PasswordNullOrEmpty);
             }
-        }      
+        }
+
 
         #endregion
 
         #region Common Methods
-        
+
+        private string DecodePasswordToPlainText(string password, out bool errorDecoding)
+        {
+            try
+            {
+                errorDecoding = false;
+                string pwDecoded64 = Encoding.UTF8.GetString(Convert.FromBase64String(password));
+                return pwDecoded64;
+            }
+            catch
+            {
+                errorDecoding = true;
+                return null;
+            }
+        }
+
+        private string EncriptAccountPassword(string password)
+        {
+            using var sha512 = SHA512.Create();
+            var hashedBytes = sha512.ComputeHash(Encoding.UTF8.GetBytes(password));
+            var hash = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            return hash;
+        }
+
         private AuthorizationViewModel CreateUsersClaim(AuthorizationPayload payload, GreenerGrain.Domain.Entities.Account account, bool loadApplications = false)
         {
             List<Claim> claims = new List<Claim>
             {
                 new Claim("sub", account.Id.ToString()),
                 new Claim("login", account.Login),
-                new Claim("name", account.Name),
-                new Claim("institutionId", account.InstitutionId.ToString()),
-                new Claim("providerCode", account.Provider.Code.ToString())
+                new Claim("name", account.Name)
             };
 
             var userProfiles = _accountProfileService.GetAccountProfiles(account.Id);
