@@ -302,22 +302,9 @@ namespace GreenerGrain.Framework.Security.Authorization
             Guid.TryParse(claimSub.Value, out Guid userId);
             account.Id = userId;
 
-            var claimInstitutionid = claims.FirstOrDefault(c => c.Type.Equals("institutionId"));
-            Guid.TryParse(claimInstitutionid.Value, out Guid institutionid);
-            account.InstitutionId = institutionid;
-
-            var claimProviderCode = claims.FirstOrDefault(c => c.Type.Equals("providerCode"));            
-            account.ProviderCode = claimProviderCode.Value;
-
             account.Name = claims.FirstOrDefault(c => c.Type.Equals("name")).Value;            
             account.Login = claims.FirstOrDefault(c => c.Type.Equals("login")).Value;
-            
-            //Conditional condition to load: applications, profiles and roles from jwt token
-            var applicatrionsString = claims.FirstOrDefault(c => c.Type.Equals("applications"));
-            if (applicatrionsString != null)
-            {
-                account.Applications = JsonConvert.DeserializeObject<List<Application>>(applicatrionsString.Value);
-            }
+          
 
             return account;
         }

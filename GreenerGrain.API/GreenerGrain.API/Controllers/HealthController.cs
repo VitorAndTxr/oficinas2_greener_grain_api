@@ -37,7 +37,7 @@ namespace GreenerGrain.API.Controllers
         [HttpGet]
         [ProducesDefaultResponseType(typeof(ApiResponse<string>))]
 
-        public IActionResult Get([FromBody]string password)
+        public IActionResult Get()
         {
             var response = this.ServiceInvoke(
             () =>
