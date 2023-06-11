@@ -21,19 +21,6 @@ namespace GreenerGrain.Data.Mapping
                  .Property(b => b.ProfileId)
                  .IsRequired();
 
-            builder
-                .Property(b => b.CreationDate)
-                .HasColumnType("datetime2")
-                .IsRequired();
-
-            builder
-                .Property(b => b.UpdateDate)
-                .HasColumnType("datetime2");
-
-            builder
-                .Property(b => b.DeleteDate)
-                .HasColumnType("datetime2");
-
             builder.HasOne(x => x.Account);
             builder.HasOne(x => x.Profile);            
         }

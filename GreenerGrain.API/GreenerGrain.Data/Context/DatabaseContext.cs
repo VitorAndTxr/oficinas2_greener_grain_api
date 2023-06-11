@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using Module = GreenerGrain.Domain.Entities.Module;
 
 namespace GreenerGrain.Data.Context
 {
@@ -26,7 +27,11 @@ namespace GreenerGrain.Data.Context
         public DbSet<Account> Account { get; set; }
         public DbSet<AccountProfile> AccountProfile { get; set; }
         public DbSet<Profile> Profile { get; set; }
-
+        public DbSet<AccountWallet> AccountWallet { get; set; }
+        public DbSet<Unit> Unit { get; set; }
+        public DbSet<Module> Module { get; set; }
+        public DbSet<Grain> Grain { get; set; }
+        public DbSet<BuyTransaction> BuyTransaction { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

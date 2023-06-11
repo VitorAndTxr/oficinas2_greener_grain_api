@@ -18,7 +18,7 @@ namespace GreenerGrain.Domain.Entities
         public string Name { get; private set; }
         public string Password { get; private set; }
 
-
+        public AccountWallet AccountWallet { get; private set; }
 
     }
 }

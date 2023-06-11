@@ -21,20 +21,6 @@ namespace GreenerGrain.Data.Mapping
                  .Property(b => b.Name)
                  .HasColumnType("varchar(150)")
                  .IsRequired();
-
-            builder
-                .Property(b => b.CreationDate)
-                .HasColumnType("datetime2")
-                .IsRequired();
-
-            builder
-                .Property(b => b.UpdateDate)
-                .HasColumnType("datetime2");
-
-            builder
-                .Property(b => b.DeleteDate)
-                .HasColumnType("datetime2");
-
         }
     }
 }

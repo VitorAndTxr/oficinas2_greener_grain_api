@@ -3,16 +3,14 @@ using GreenerGrain.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
-using System.Reflection;
-using System.Security.Cryptography.Xml;
 
 namespace GreenerGrain.Data.Mapping
 {
-    public class ProfileMap : BaseAuditEntityMap<Profile, Guid>
+    public class GrainMap : BaseAuditEntityMap<Grain, Guid>
     {
-        protected override void CreateModel(EntityTypeBuilder<Profile> builder)
+        protected override void CreateModel(EntityTypeBuilder<Grain> builder)
         {
-            builder.ToTable("Profile");
+            builder.ToTable("Grain");
 
             builder
                  .Property(b => b.Name)
@@ -20,9 +18,19 @@ namespace GreenerGrain.Data.Mapping
                  .IsRequired();
 
             builder
-                 .Property(b => b.Code)
-                 .HasColumnType("varchar(80)")
+                 .Property(b => b.Price)
                  .IsRequired();
+
+            builder
+                 .Property(b => b.ImageUrl)
+                 .IsRequired();
+
+            builder
+             .Property(b => b.CreatorId)
+             .IsRequired();
+
+            builder
+                .HasOne(x => x.Creator);
 
         }
     }
