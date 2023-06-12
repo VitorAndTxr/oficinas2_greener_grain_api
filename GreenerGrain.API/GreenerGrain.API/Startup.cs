@@ -86,7 +86,7 @@ namespace GreenerGrain.API
         private Timer _timer;
 
         //Interval in milliseconds
-        int _interval = 20000;
+        int _interval = 3*60*1000;
 
         public void SetTimer()
         {
@@ -103,8 +103,6 @@ namespace GreenerGrain.API
                     using HttpResponseMessage response = client.GetAsync("http://192.168.18.6:6006/api/v1/Unit/Verify").Result;
                     response.EnsureSuccessStatusCode();
                     string responseBody = response.Content.ReadAsStringAsync().Result;
-
-                    Console.WriteLine("Oi!");
                 }
             }
             finally
