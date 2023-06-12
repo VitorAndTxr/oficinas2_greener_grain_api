@@ -3,22 +3,23 @@ using GreenerGrain.Framework.Database.EfCore.Factory;
 using GreenerGrain.Framework.Database.EfCore.Repository;
 using GreenerGrain.Data.Interfaces;
 using GreenerGrain.Domain.Entities;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace GreenerGrain.Data.Repositories
 {
-    public class AccountRepository : RepositoryBase<Account>, IAccountRepository
+    public class AccountWalletRepository : RepositoryBase<AccountWallet>, IAccountWalletRepository
     {
 
-        public AccountRepository(IDbFactory dbFactory, IApiContext apiContext)
+        public AccountWalletRepository(IDbFactory dbFactory, IApiContext apiContext)
                    : base(dbFactory, apiContext)
         {
         }
 
-        public async Task<Account> GetByLogin(string login)
+        public async Task<AccountWallet> GetByAccountId(Guid accountId)
         {
-            var result = await GetAsync(x => x.Login == login,
+            var result = await GetAsync(x => x.AccountId == accountId,
                 includeProperties: "");
 
             return result.FirstOrDefault();

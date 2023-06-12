@@ -23,7 +23,8 @@ namespace GreenerGrain.API.Config
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins, builder =>
                 {
-                    builder.WithOrigins(allowOrigins)
+                    builder/*.WithOrigins(allowOrigins)*/
+                        .AllowAnyOrigin()
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });

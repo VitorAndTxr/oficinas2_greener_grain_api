@@ -9,6 +9,14 @@ namespace GreenerGrain.Service.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<GreenerGrain.Domain.Entities.Profile, ProfileViewModel>();
+            CreateMap<GreenerGrain.Domain.Entities.Unit, UnitViewModel>();
+            CreateMap<GreenerGrain.Domain.Entities.Module, ModuleViewModel>();
+            CreateMap<GreenerGrain.Domain.Entities.Grain, GrainViewModel>();
+            CreateMap<GreenerGrain.Domain.Entities.Account, AccountViewModel>();
+            CreateMap<GreenerGrain.Domain.Entities.AccountWallet, AccountWalletViewModel>();
+
+
+
         }
     }
 }

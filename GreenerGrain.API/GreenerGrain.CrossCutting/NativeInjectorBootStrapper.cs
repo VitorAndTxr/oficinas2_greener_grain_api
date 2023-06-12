@@ -10,6 +10,7 @@ using GreenerGrain.Service.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using GreenerGrain.Domain.Entities;
 
 namespace GreenerGrain.CrossCutting
 {
@@ -31,6 +32,10 @@ namespace GreenerGrain.CrossCutting
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IProfileService, ProfileService>();
             services.AddScoped<IAccountProfileService, AccountProfileService>();
+            services.AddScoped<IAccountWalletService, AccountWalletService>();
+
+            services.AddScoped<IUnitService, UnitService>();
+
 
 
         }
@@ -50,6 +55,13 @@ namespace GreenerGrain.CrossCutting
             services.AddScoped<IAccountProfileRepository, AccountProfileRepository>();
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<IProfileRepository, ProfileRepository>();
+            services.AddScoped<IAccountWalletRepository, AccountWalletRepository>();
+            services.AddScoped<IBuyTransactionRepository, BuyTransactionRepository>();
+            services.AddScoped<IGrainRepository, GrainRepository>();
+            services.AddScoped<IModuleRepository, ModuleRepository>();
+            services.AddScoped<IUnitRepository, UnitRepository>();
+
+
 
         }
 

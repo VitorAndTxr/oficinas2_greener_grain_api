@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace GreenerGrain.Data.Interfaces
 {
-    public interface IAccountRepository : IRepositoryBase<Account>
+    public interface IUnitRepository : IRepositoryBase<Unit>
     {
-        Task<Account> GetByLogin(string login);     
+        Task<Unit> GetByUnitCode(string code);
     }
 }

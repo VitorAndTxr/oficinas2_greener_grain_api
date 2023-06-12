@@ -1,11 +1,9 @@
 ﻿using GreenerGrain.Framework.Database.EfCore.Interface;
 using GreenerGrain.Domain.Entities;
-using System.Threading.Tasks;
 
 namespace GreenerGrain.Data.Interfaces
 {
-    public interface IAccountRepository : IRepositoryBase<Account>
+    public interface IModuleRepository : IRepositoryBase<Module>
     {
-        Task<Account> GetByLogin(string login);     
     }
 }
