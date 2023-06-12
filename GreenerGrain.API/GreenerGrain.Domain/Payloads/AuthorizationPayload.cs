@@ -9,4 +9,11 @@ namespace GreenerGrain.Domain.Payloads
         public string Password { get; set; }
 
     }
+
+    public class UnitAlivePayload
+    {
+        public string Id { get; set; }
+        public string Ip { get; set; }
+
+    }
 }

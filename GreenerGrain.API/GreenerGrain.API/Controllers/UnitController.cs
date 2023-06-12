@@ -4,7 +4,8 @@ using GreenerGrain.Framework.Result;
 using GreenerGrain.Domain.ViewModels;
 using GreenerGrain.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using GreenerGrain.Framework.Security.Authorization;
+using Microsoft.AspNetCore.Http;
+using GreenerGrain.Domain.Payloads;
 
 namespace Google.API.Account.Controllers
 {
@@ -48,50 +49,25 @@ namespace Google.API.Account.Controllers
             var response = this.ServiceInvoke(_unitService.GetByUnitCode, code);
             return response;
         }
-        #endregion
 
-    }
-
-    [ApiController]
-    [Route("api/v1/[controller]")]
-    public class AccountWalletController : ApiBaseController
-    {
-        #region Fields
-
-        /// <summary>
-        /// Referencia interna ao serviço 
-        /// </summary>
-        private readonly IAccountWalletService _accountWalletService = null;
-
-        #endregion
-
-        #region Construtor
-
-        /// <summary>
-        /// Construtor
-        /// </summary>
-
-        public AccountWalletController(IApiContext apiContext, IAccountWalletService accountWalletService) : base(apiContext)
+        [Route("Verify")]
+        [HttpGet]
+        [ProducesDefaultResponseType(typeof(ApiResponse<OkResult>))]
+        public IActionResult VerifyUnits()
         {
-            _accountWalletService = accountWalletService;
+            _unitService.VerifyStatus();
+            return StatusCode(200);
         }
 
-        #endregion
-        #region Controller Methods
-
-        /// <summary>
-        /// Realiza a autorização (login) de uma conta de usuárioo
-        /// </summary>
-        /// <param name="payload"></param>
-        /// <returns></returns>
-        [Route("")]
-        [Authorize("sub")]
-        [HttpGet]
-        [ProducesDefaultResponseType(typeof(ApiResponse<AccountWalletViewModel>))]
-        public IActionResult GetAccountWallet()
+        [Route("Alive")]
+        [HttpPost]
+        [ProducesDefaultResponseType(typeof(ApiResponse<OkResult>))]
+        public IActionResult VerifyUnits([FromBody] UnitAlivePayload payload )
         {
-            var response = this.ServiceInvoke(_accountWalletService.GetByUserWallet);
-            return response;
+            
+            var response = this.ServiceInvoke(_unitService.UnitAlive, payload);
+
+            return StatusCode(200);
         }
         #endregion
 

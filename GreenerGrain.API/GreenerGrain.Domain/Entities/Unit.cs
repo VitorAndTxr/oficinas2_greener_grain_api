@@ -12,6 +12,19 @@ namespace GreenerGrain.Domain.Entities
             SetId(Guid.NewGuid());
         }
 
+        public void isAlive(string ip)
+        {
+            Ip = ip;
+            State = UnitStateEnum.Idle;
+            UpdateDate = DateTime.Now;
+        }
+
+        public void isOffline()
+        {
+            State = UnitStateEnum.Offline;
+            UpdateDate = DateTime.Now;
+        }
+
         public string Code { get; private set; }
         public string MAC { get; private set; }
 

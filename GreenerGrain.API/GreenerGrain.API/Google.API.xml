@@ -60,23 +60,6 @@
             Efetua o refresh token de autorização de uma conta de usuário e retorna permissões de acesso de uma aplicação específica
             </summary>
         </member>
-        <member name="F:Google.API.Account.Controllers.UnitController._unitService">
-            <summary>
-            Referencia interna ao serviço 
-            </summary>
-        </member>
-        <member name="M:Google.API.Account.Controllers.UnitController.#ctor(API.Framework.Interfaces.IApiContext,GreenerGrain.Service.Interfaces.IUnitService)">
-            <summary>
-            Construtor
-            </summary>
-        </member>
-        <member name="M:Google.API.Account.Controllers.UnitController.Authorization(System.String)">
-            <summary>
-            Realiza a autorização (login) de uma conta de usuárioo
-            </summary>
-            <param name="payload"></param>
-            <returns></returns>
-        </member>
         <member name="F:Google.API.Account.Controllers.AccountWalletController._accountWalletService">
             <summary>
             Referencia interna ao serviço 
@@ -88,6 +71,23 @@
             </summary>
         </member>
         <member name="M:Google.API.Account.Controllers.AccountWalletController.GetAccountWallet">
+            <summary>
+            Realiza a autorização (login) de uma conta de usuárioo
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Google.API.Account.Controllers.UnitController._unitService">
+            <summary>
+            Referencia interna ao serviço 
+            </summary>
+        </member>
+        <member name="M:Google.API.Account.Controllers.UnitController.#ctor(API.Framework.Interfaces.IApiContext,GreenerGrain.Service.Interfaces.IUnitService)">
+            <summary>
+            Construtor
+            </summary>
+        </member>
+        <member name="M:Google.API.Account.Controllers.UnitController.Authorization(System.String)">
             <summary>
             Realiza a autorização (login) de uma conta de usuárioo
             </summary>
