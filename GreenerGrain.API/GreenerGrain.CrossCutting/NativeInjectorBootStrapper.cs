@@ -33,6 +33,8 @@ namespace GreenerGrain.CrossCutting
             services.AddScoped<IProfileService, ProfileService>();
             services.AddScoped<IAccountProfileService, AccountProfileService>();
             services.AddScoped<IAccountWalletService, AccountWalletService>();
+            services.AddScoped<IBuyTransactionService, BuyTransactionService>();
+
 
             services.AddScoped<IUnitService, UnitService>();
 

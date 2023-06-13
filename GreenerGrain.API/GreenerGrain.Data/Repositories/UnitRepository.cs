@@ -33,6 +33,14 @@ namespace GreenerGrain.Data.Repositories
             return result.FirstOrDefault();
         }
 
+        public async Task<Unit> GetByModuleIdAsync(Guid id)
+        {
+            var result = await GetAsync(x => x.Modules.Where(y => y.Id == id).Any(),
+                includeProperties: "Modules.Grain");
+
+            return result.FirstOrDefault();
+        }
+
         public async Task<List<Unit>> ListUnitGettingOffline()
         {
             var result = await GetAsync(
@@ -54,5 +62,7 @@ namespace GreenerGrain.Data.Repositories
 
             return result.ToList();
         }
+
+
     }
 }

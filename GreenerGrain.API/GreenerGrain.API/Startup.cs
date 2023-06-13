@@ -86,7 +86,7 @@ namespace GreenerGrain.API
         private Timer _timer;
 
         //Interval in milliseconds
-        int _interval = 3*60*1000;
+        int _interval = 5*1000;
 
         public void SetTimer()
         {

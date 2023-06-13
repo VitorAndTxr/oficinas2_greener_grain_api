@@ -11,8 +11,6 @@ namespace GreenerGrain.Data.Mapping
         protected override void CreateModel(EntityTypeBuilder<BuyTransaction> builder)
         {
             builder.ToTable("BuyTransaction");
-            builder
-                .HasKey(t => new { t.BuyerId, t.ModuleId, t.GrainId });
 
             builder
                  .Property(b => b.Quantity)

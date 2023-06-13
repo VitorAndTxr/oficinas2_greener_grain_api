@@ -14,6 +14,8 @@ namespace GreenerGrain.Service.AutoMapper
             CreateMap<GreenerGrain.Domain.Entities.Grain, GrainViewModel>();
             CreateMap<GreenerGrain.Domain.Entities.Account, AccountViewModel>();
             CreateMap<GreenerGrain.Domain.Entities.AccountWallet, AccountWalletViewModel>();
+            CreateMap<GreenerGrain.Domain.Entities.BuyTransaction, BuyTransactionViewModel>();
+
 
 
 

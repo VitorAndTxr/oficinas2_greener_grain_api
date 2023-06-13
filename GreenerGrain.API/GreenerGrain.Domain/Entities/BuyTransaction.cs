@@ -5,9 +5,17 @@ namespace GreenerGrain.Domain.Entities
 {
     public class BuyTransaction : AuditEntity<Guid>
     {
-        public BuyTransaction()
+        public BuyTransaction(float quantity, float value, Guid buyerId, Guid moduleId, Guid grainId)
         {
             SetId(Guid.NewGuid());
+            Quantity= quantity;
+            Value= value;
+            BuyerId= buyerId;
+            ModuleId= moduleId;
+            GrainId= grainId;
+        }
+        public BuyTransaction()
+        {
         }
         public float Quantity { get; private set; }
         public float Value { get; private set; }

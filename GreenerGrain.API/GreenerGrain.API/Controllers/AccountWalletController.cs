@@ -5,6 +5,7 @@ using GreenerGrain.Domain.ViewModels;
 using GreenerGrain.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using GreenerGrain.Framework.Security.Authorization;
+using GreenerGrain.Domain.Payloads;
 
 namespace Google.API.Account.Controllers
 {
@@ -47,6 +48,51 @@ namespace Google.API.Account.Controllers
         public IActionResult GetAccountWallet()
         {
             var response = this.ServiceInvoke(_accountWalletService.GetByUserWallet);
+            return response;
+        }
+        #endregion
+
+    }
+
+    [ApiController]
+    [Route("api/v1/[controller]")]
+    public class BuyTransactionController : ApiBaseController
+    {
+        #region Fields
+
+        /// <summary>
+        /// Referencia interna ao serviço 
+        /// </summary>
+        private readonly IBuyTransactionService _buyTransactionService = null;
+
+        #endregion
+
+        #region Construtor
+
+        /// <summary>
+        /// Construtor
+        /// </summary>
+
+        public BuyTransactionController(IApiContext apiContext, IBuyTransactionService buyTransactionService) : base(apiContext)
+        {
+            _buyTransactionService = buyTransactionService;
+        }
+
+        #endregion
+        #region Controller Methods
+
+        /// <summary>
+        /// Realiza a autorização (login) de uma conta de usuárioo
+        /// </summary>
+        /// <param name="payload"></param>
+        /// <returns></returns>
+        [Route("")]
+        [Authorize("sub")]
+        [HttpPost]
+        [ProducesDefaultResponseType(typeof(ApiResponse<BuyTransactionViewModel>))]
+        public IActionResult GetAccountWallet([FromBody] CreateBuyTransactionPayload payload)
+        {
+            var response = this.ServiceInvoke(_buyTransactionService.CreateTransaction, payload);
             return response;
         }
         #endregion

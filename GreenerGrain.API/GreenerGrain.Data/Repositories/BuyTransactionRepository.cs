@@ -11,6 +11,6 @@ namespace GreenerGrain.Data.Repositories
         public BuyTransactionRepository(IDbFactory dbFactory, IApiContext apiContext)
                    : base(dbFactory, apiContext)
         {
-        }
+        } 
     }
 }

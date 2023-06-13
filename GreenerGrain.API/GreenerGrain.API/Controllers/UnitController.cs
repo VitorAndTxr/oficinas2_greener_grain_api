@@ -42,7 +42,7 @@ namespace Google.API.Account.Controllers
         /// <param name="payload"></param>
         /// <returns></returns>
         [Route("{code}")]
-        [HttpPost]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(ApiResponse<UnitViewModel>))]
         public IActionResult Authorization(string code)
         {
@@ -62,7 +62,7 @@ namespace Google.API.Account.Controllers
         [Route("Alive")]
         [HttpPost]
         [ProducesDefaultResponseType(typeof(ApiResponse<OkResult>))]
-        public IActionResult VerifyUnits([FromBody] UnitAlivePayload payload )
+        public IActionResult UnitAlive([FromBody] UnitAlivePayload payload )
         {
             
             var response = this.ServiceInvoke(_unitService.UnitAlive, payload);

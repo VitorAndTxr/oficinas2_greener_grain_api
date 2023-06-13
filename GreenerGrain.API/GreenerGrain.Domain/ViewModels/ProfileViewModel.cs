@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GreenerGrain.Domain.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace GreenerGrain.Domain.ViewModels

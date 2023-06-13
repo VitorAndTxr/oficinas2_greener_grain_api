@@ -9,11 +9,4 @@ namespace GreenerGrain.Domain.Enumerators
         public static ApplicationErrors ApplicationNotExistis = new ApplicationErrors(1, "AP001", "Aplicação não existe.");
         
     }
-
-    public enum UnitStateEnum
-    {
-        Offline,
-        Idle,
-        Busy
-    }
 }

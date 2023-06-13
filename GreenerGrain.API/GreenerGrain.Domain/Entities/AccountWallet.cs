@@ -9,6 +9,16 @@ namespace GreenerGrain.Domain.Entities
         {
             SetId(Guid.NewGuid());
         }
+
+        public void RemoveCredits(float value)
+        {
+            Credits = Credits - value;
+        }
+
+        public void AddCredits(float value)
+        {
+            Credits = Credits - value;
+        }
         public float Credits { get; private set; }
         public Guid AccountId { get; private set; }
         public Account Account { get; private set; }

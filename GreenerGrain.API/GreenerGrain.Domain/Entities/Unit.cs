@@ -12,14 +12,20 @@ namespace GreenerGrain.Domain.Entities
             SetId(Guid.NewGuid());
         }
 
-        public void isAlive(string ip)
+        public void isAlive(string ip, UnitStateEnum state )
         {
             Ip = ip;
-            State = UnitStateEnum.Idle;
+            State = state;
             UpdateDate = DateTime.Now;
         }
 
         public void isOffline()
+        {
+            State = UnitStateEnum.Offline;
+            UpdateDate = DateTime.Now;
+        }
+
+        public void isBusy()
         {
             State = UnitStateEnum.Offline;
             UpdateDate = DateTime.Now;

@@ -10,7 +10,7 @@ using GreenerGrain.Domain.Payloads;
 using GreenerGrain.Data.Repositories;
 using System.Threading.Tasks;
 using GreenerGrain.Framework.Database.EfCore.Interface;
-using GreenerGrain.Framework.Database.EfCore.Repository;
+using System;
 
 namespace GreenerGrain.Service.Services
 {
@@ -20,10 +20,9 @@ namespace GreenerGrain.Service.Services
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
-
         public UnitService(
-            IApiContext apiContext
-            , IUnitOfWork unitOfWork
+            IApiContext apiContext,
+            IUnitOfWork unitOfWork
             , IUnitRepository unitRepository
             , IMapper mapper)
                 : base(apiContext)
@@ -32,6 +31,24 @@ namespace GreenerGrain.Service.Services
             _unitRepository = unitRepository;
             _mapper = mapper;
         }
+        public UnitViewModel GetById(Guid id)
+        {
+            var unit = _unitRepository.GetByIdAsync(id).Result;
+
+            var unitViewModel = _mapper.Map<UnitViewModel>(unit);
+            return unitViewModel;
+        }
+
+
+
+        public UnitViewModel GetByModuleId(Guid moduleId)
+        {
+            var unit = _unitRepository.GetByModuleIdAsync(moduleId).Result;
+
+            var unitViewModel = _mapper.Map<UnitViewModel>(unit);
+            return unitViewModel;
+        }
+
 
         public UnitViewModel GetByUnitCode(string unitCode)
         {
@@ -54,11 +71,25 @@ namespace GreenerGrain.Service.Services
             var result = Task.Run(() => _unitOfWork.CommitAsync()).Result;
         }
 
+        public bool SetUnitBusy(Guid id)
+        {
+            var unit = _unitRepository.GetByIdAsync(id).Result;
+
+
+            unit.isBusy();
+
+            _unitRepository.Update(unit);
+
+            var result = Task.Run(() => _unitOfWork.CommitAsync()).Result;
+
+            return result;
+        }
+
         public bool UnitAlive(UnitAlivePayload payload)
         {
             var unit = _unitRepository.GetByIdAsync(payload.Id).Result;
 
-            unit.isAlive(payload.Ip);
+            unit.isAlive(payload.Ip, payload.Status);
 
             _unitRepository.Update(unit);
 
@@ -67,5 +98,7 @@ namespace GreenerGrain.Service.Services
             return result;
 
         }
+
+
     }
 }

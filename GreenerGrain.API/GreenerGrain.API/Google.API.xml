@@ -77,6 +77,23 @@
             <param name="payload"></param>
             <returns></returns>
         </member>
+        <member name="F:Google.API.Account.Controllers.BuyTransactionController._buyTransactionService">
+            <summary>
+            Referencia interna ao serviço 
+            </summary>
+        </member>
+        <member name="M:Google.API.Account.Controllers.BuyTransactionController.#ctor(API.Framework.Interfaces.IApiContext,GreenerGrain.Service.Interfaces.IBuyTransactionService)">
+            <summary>
+            Construtor
+            </summary>
+        </member>
+        <member name="M:Google.API.Account.Controllers.BuyTransactionController.GetAccountWallet(GreenerGrain.Domain.Payloads.CreateBuyTransactionPayload)">
+            <summary>
+            Realiza a autorização (login) de uma conta de usuárioo
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
         <member name="F:Google.API.Account.Controllers.UnitController._unitService">
             <summary>
             Referencia interna ao serviço 
